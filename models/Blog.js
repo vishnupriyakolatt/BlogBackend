@@ -15,11 +15,23 @@ const blogSchema = new Schema({
     type: String,
     required: true,
   },
-  user: {
+  photo:{
+type:String,
+required:true
+  },
+  userId: {
     type: mongoose.Types.ObjectId,
     ref: 'User',
     required: true,
   },
+  views:{
+    type:Number,
+    default:0
+  },
+  likes:{
+    type:[String],
+    default:[]
+  }
 },
 {timestamps:true});
 
